@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:hive/hive.dart';
 import 'package:nytimes_test/constants.dart';
 import 'package:nytimes_test/models/bookmark.dart';
@@ -24,7 +23,7 @@ class _BookmarkListState extends State<BookmarkList> {
               builder: (context, snapshot) {
                 final bookmarks = Hive.box('bookmarks');
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return PlatformCircularProgressIndicator();
+                  return CircularProgressIndicator();
                 } else if (snapshot.connectionState == ConnectionState.done) {
                   if (snapshot.hasError) {
                     return Text("Error");

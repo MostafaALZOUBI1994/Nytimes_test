@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:nytimes_test/ui/bookmark_list.dart';
 import 'package:nytimes_test/ui/stroy_list.dart';
@@ -51,19 +51,8 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     //check platform ios or android to change style depnad on it
-    bool isIOS = Theme.of(context).platform == TargetPlatform.iOS;
-    return isIOS
-        ? CupertinoPageScaffold(
-            navigationBar: CupertinoNavigationBar(
-              middle: Text('Test'),
-            ),
-            child: Container(
-              child: TabBarView(
-                controller: _controller,
-                children: [StoryList(), BookmarkList()],
-              ),
-            ))
-        : Scaffold(
+  ;
+    return  Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.redAccent,
               title: Text(
